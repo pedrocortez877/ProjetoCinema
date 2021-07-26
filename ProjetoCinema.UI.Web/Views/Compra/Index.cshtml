@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProjetoCinema.Dominio.COMPRA>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Dt_Compra)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CLIENTE)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dt_Compra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CLIENTE.Nome_Cliente)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { ID_Compra=item.ID_Compra }) |
+            @Html.ActionLink("Details", "Detalhes", new { ID_Compra = item.ID_Compra }) |
+            @Html.ActionLink("Delete", "Delete", new { ID_Compra = item.ID_Compra })
+        </td>
+    </tr>
+}
+
+</table>

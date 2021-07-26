@@ -1,0 +1,71 @@
+﻿@model ProjetoCinema.Dominio.INGRESSO
+
+@{
+    ViewBag.Title = "Comprar Ingressos";
+}
+
+@Styles.Render("~/Content/Index.css")
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <h2 class="title" id="titleAlign">Escolha seu assento</h2>
+            <div class="col-md-9">
+                @foreach (var item in Model.SESSAO.SALA.ASSENTO_SALA)
+                {
+                    <button type="button"
+                        value="@item.Posicao_Assento" class="btn_assento" id="@item.Posicao_Assento">
+                        @item.Posicao_Assento
+                    </button>
+                }
+                <input type="hidden" id="ID_Assento_Sala" name="ID_Assento_Sala"/>
+                <div id="line-footer">Tela do cinema</div>
+            </div>
+            <div class="col-md-3">
+                <label class="title">Tipo de ingresso</label>
+                <br />
+                <select name="ID_Tipo" id="ID_Tipo" class="form-control">
+                    <option value="1">Inteira</option>
+                    <option value="2">Meia</option>
+                </select>
+                <br />
+                <input type="submit" value="Comprar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            var ID_SESSAO = '@Model.ID_Sessao';
+            $.ajax({
+                type: 'GET',
+                data: { ID_SESSAO: ID_SESSAO },
+                dataType: 'json',
+                url: '/Ingresso/ListaAssentosOcupados',
+                success: function (response) {
+                    response.forEach(function (item) {
+                        console.log("#" + item);
+                        $("#" + item).attr("disabled", true).attr("style", "background-color: red; color: #FFF; width: 60px; height: 60px; border-radius: 10px; margin: 10px")
+                    });
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
+        });
+
+        $(".btn_assento").click(function (value) {
+            console.log(value.target.innerText)
+            $(this).attr("style", "background-color: green; color: #FFF; width: 60px; height: 60px; border-radius: 10px; margin: 10px");
+            $("#ID_Assento_Sala").attr("value", value.target.innerText);
+            $(".btn_assento").attr("disabled", true);
+        });
+    </script>    
+}
+

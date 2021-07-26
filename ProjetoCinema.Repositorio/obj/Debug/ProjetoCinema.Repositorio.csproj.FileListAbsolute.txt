@@ -1,0 +1,15 @@
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Repositorio.dll.config
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Repositorio.dll
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Repositorio.pdb
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\EntityFramework.dll
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Dominio.dll
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Dominio.pdb
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\ProjetoCinema.Dominio.dll.config
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\EntityFramework.xml
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\obj\Debug\ProjetoCinema.Repositorio.csproj.AssemblyReference.cache
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\obj\Debug\ProjetoCinema.Repositorio.csproj.CoreCompileInputs.cache
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\obj\Debug\ProjetoCinema.Repositorio.csproj.CopyComplete
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\obj\Debug\ProjetoCinema.Repositorio.dll
+C:\Users\pedro.cortez\source\repos\ProjetoCinema\ProjetoCinema.Repositorio\obj\Debug\ProjetoCinema.Repositorio.pdb

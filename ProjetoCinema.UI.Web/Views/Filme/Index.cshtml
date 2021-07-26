@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ProjetoCinema.Dominio.FILME>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Styles.Render("~/Content/Index.css")
+
+<h2 class="title">Filmes Disponíveis</h2>
+
+<table class="table">
+    <tr id="headerTable">
+        <th>
+            Titulo
+        </th>
+        <th>
+            Sinopse
+        </th>
+        <th>
+            Classificação indivativa
+        </th>
+        <th>
+            Duração
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titulo)
+                <br />
+                <br />
+                <img src="@item.Capa" alt="Filme" class="imageFilme" />
+                <br />
+                <br />
+                @Html.ActionLink(
+                    "Ver Sessões",
+                    "SessoesDisponiveis",
+                    "Sessao",
+                    new
+                    {
+                        ID_Filme = item.ID_Filme
+                    },
+                    new
+                    {
+                        @style= "color: #8257e5"
+                    }
+                )
+            </td>
+            <td>
+                <br />
+                <br />
+                @Html.DisplayFor(modelItem => item.Sinopse)
+            </td>
+            <td>
+                <br />
+                <br />
+                @Html.DisplayFor(modelItem => item.CLASS_INDICATIVA.Nome_Class)
+            </td>
+            <td>
+                <br />
+                <br />
+                @Html.DisplayFor(modelItem => item.Duracao) Minutos
+            </td>
+        </tr>
+    }
+
+</table>

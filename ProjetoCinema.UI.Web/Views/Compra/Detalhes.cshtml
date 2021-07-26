@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProjetoCinema.Dominio.INGRESSO>
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ASSENTO_SALA.Posicao_Assento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TIPO_INGRESSO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Valor)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ASSENTO_SALA.Posicao_Assento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIPO_INGRESSO.Nome_Tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID_Ingresso }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID_Ingresso }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID_Ingresso })
+        </td>
+    </tr>
+}
+
+</table>

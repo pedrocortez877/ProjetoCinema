@@ -1,0 +1,45 @@
+﻿th, td {
+    font-family: 'Poppins', sans-serif;
+    color: #9e9e9e;
+}
+
+body {
+    background-color: #121214;
+}
+
+.title {
+    color: #9e9e9e;
+}
+
+#headerTable{
+    border: none;
+}
+
+#titleAlign{
+    margin-left: 25px;
+}
+
+.imageFilme {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.btn_assento {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    margin: 10px
+}
+
+#line-footer {
+    height: 30px;
+    color: #9e9e9e;
+    background-color: #333333;
+    border-radius: 8px;
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 24px;
+    font-weight: bold;
+    font-size: 20px;
+}

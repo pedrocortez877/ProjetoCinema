@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjetoCinema.Dominio.SESSAO>
+
+@{
+    ViewBag.Title = "Sessões Disponiveis";
+}
+
+@Styles.Render("~/Content/Index.css")
+
+<h2 class="title">Sessões Disponiveis</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Data da sessão
+        </th>
+        <th>
+            Horário
+        </th>
+        <th>
+            Sala
+        </th>
+        <th>
+            Filme
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dt_Sessao)
+                <br />
+                <br />
+                <br />
+                @Html.ActionLink(
+                    "Comprar Ingressos",
+                    "CompraIngresso",
+                    "Ingresso",
+                    new
+                    {
+                        ID_Sessao = item.ID_Sessao
+                    },
+                    new
+                    {
+                        @style = "color: #8257e5"
+                    }
+                )
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Horario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SALA.Nome_Sala)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FILME.Titulo)
+                <br />
+                <img src="@item.FILME.Capa" alt="Filme" style="width: 80px; height: 80px; border-radius: 10px" />
+            </td>
+        </tr>
+    }
+
+</table>

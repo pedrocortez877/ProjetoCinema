@@ -1,0 +1,23 @@
+﻿#navbar {
+    background-color: #1c1c21;
+    height: 80px;
+}
+
+#logo {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#containerLayout{
+    margin-top: 25px;
+}
+
+.links{
+    margin-top: -10px;
+    margin-left: 10px;
+}
+
+.font {
+    font-family: 'Poppins', sans-serif;
+    color: #8257e5;
+}

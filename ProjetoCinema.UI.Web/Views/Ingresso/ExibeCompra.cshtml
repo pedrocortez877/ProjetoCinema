@@ -1,0 +1,69 @@
+﻿@model ProjetoCinema.Dominio.INGRESSO
+
+@{
+    ViewBag.Title = "ExibeCompra";
+
+    var sinopse = Model.SESSAO.FILME.Sinopse;
+    if(sinopse.Length > 180)
+    {
+        sinopse = sinopse.Substring(0, 180) + "...";
+    }
+
+}
+
+@Styles.Render("~/Content/Index.css")
+@Styles.Render("~/Content/ExibeCompra.css")
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<h2 class="title">Compra efetuada com sucesso!</h2>
+
+<div>
+    <hr />
+    <div id="container">
+
+        <div class="product-details">
+
+            <h1 id="title">@Model.SESSAO.FILME.Titulo</h1>
+            <span class="hint-star star">
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </span>
+
+            <p class="information">@sinopse</p>
+
+
+
+            <div class="control">
+
+                <button class="btn">
+                    <span class="price">$ @Model.Valor</span>
+                    <span class="buy">Valor</span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="product-image">
+
+            <img src="@Model.SESSAO.FILME.Capa" alt="">
+
+
+            <div class="info">
+                <h2> Descrição</h2>
+                <ul>
+                    <li><strong>Data : </strong>@Model.SESSAO.Dt_Sessao </li>
+                    <li><strong>Hora : </strong>@Model.SESSAO.Horario</li>
+                    <li><strong>Sala: </strong>@Model.SESSAO.SALA.Nome_Sala</li>
+                    <li><strong>Assento: </strong>@Model.ASSENTO_SALA.Posicao_Assento</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>
+
